@@ -66,11 +66,11 @@
       <section id="sobre-mim" class="section sobre-mim" data-section="#section1">
         <div class="container">
           <div class="section-heading">
-            <h2>Sobre mim</h2>
+            <h2>About me</h2>
             <div class="line-dec"></div>
             <p>
               
-                Estudante de Engenharia da Computação na UFSC. Sou participativo e comunicativo, que valoriza a aplicação prática do conhecimento e o desenvolvimento de projetos, seja utilizando inteligência artificial, trabalhando no backend ou criando páginas web. Tenho uma abordagem prática, gosto de enfrentar desafios e buscar soluções inovadoras que tragam resultados positivos.
+                Computer Engineering student at UFSC. I am participative and communicative, valuing the practical application of knowledge and the development of projects, whether using artificial intelligence, working on backend, or creating web pages. I have a practical approach, enjoy tackling challenges, and seek innovative solutions that bring positive results.
             </p>
           </div>
           <div class="home-image-post">
@@ -91,7 +91,7 @@
       <section id="habilidades" class="section habilidades" data-section="#section2">
         <div class="container">
           <div class="section-heading">
-            <h2 style="text-align: center;">Habilidades</h2>
+            <h2 style="text-align: center;">Skills</h2>
             <div class="line-dec" style="margin: 0 auto;"></div>
           </div>
           <div style="width: 300%; max-width: 500px; margin: 0 auto;">
@@ -99,7 +99,7 @@
             <div class="row" style="margin-bottom: 20px;">
               <div class="col-md-12">
                 <div class="service-item" style="border: 2px solid #333; border-radius: 10px; padding: 20px;">
-                  <img src="{{ feature.img_path }}" alt="{{ feature.name }}imagem" class="skill-image" />
+                  <img src="{% static feature.img_path %}" alt="{{ feature.name }}imagem" class="skill-image" />
                   <h4 style="text-align: center;">{{feature.name}}</h4>
                   <p style="text-align: center;">{{feature.details}}</p>
                 </div>
@@ -114,42 +114,42 @@
       <section id="meus-projetos" class="section meus-projetos" data-section="#section3">
         <div class="container">
           <div class="section-heading">
-            <h2>Meus Projetos</h2>
+            <h2>My Projects</h2>
             <div class="line-dec"></div>
             <p>
-              <p>Esta é apenas uma visão geral de alguns projetos que eu desenvolvi, caso tenha interesse em saber mais sobre algum projeto específico ou queira conversar sobre, pode entrar em contato comigo, se clicar <a href="mailto:gabrielgavalera@gmail.com">aqui</a> será direcionado ao meu email.</p>
+              <p>This is just an overview of some projects I have developed. If you are interested in learning more about a specific project or would like to discuss further, feel free to contact me. By clicking <a href="mailto:gabrielgavalera@gmail.com">here</a>, you will be directed to my email</p>
             </div>
           <div class="row">
             <div class="isotope-wrapper">
               <form class="isotope-toolbar">
-                <label><input type="radio" data-type="*" name="isotope-filter" checked /><span>Todos</span></label>
+                <label><input type="radio" data-type="*" name="isotope-filter" checked /><span>All</span></label>
                 <label><input type="radio" data-type="artificial-intelligence" name="isotope-filter" /><span>Artificial Intelligence</span></label>
                 <label><input type="radio" data-type="backend" name="isotope-filter" /><span>Backend</span></label>
                 <label><input type="radio" data-type="hardware" name="isotope-filter" /><span>Hardware</span></label>
-                <label><input type="radio" data-type="outros" name="isotope-filter" /><span>Outros</span></label>
+                <label><input type="radio" data-type="outros" name="isotope-filter" /><span>Others</span></label>
               </form>
               <div class="isotope-box">
                 <!-- Projeto de Inteligencia Artificial -->
                 {% for ai in ai_projects %}
                 <div class="isotope-item" data-type="artificial-intelligence">
-                  <figure class="snip1321">
-                    <img src="{{ ai.img_path }}" alt="{{ ai.name }}" />
+                <figure class="snip1321">
+                    <img src="{% static ai.img_path %}" alt="{{ ai.name }}" />
                     <figcaption>
-                      <a href="{{ ai.img_path }}" data-lightbox="image-1" data-title="{{ ai.name }}"><i class="fa fa-search"></i></a>
-                      <h4>{{ ai.name }}</h4>
-                      <span>{{ ai.details }}</span>
+                    <a href="{% static ai.img_path %}" data-lightbox="image-1" data-title="{{ ai.name }}"><i class="fa fa-search"></i></a>
+                    <h4>{{ ai.name }}</h4>
+                    <span>{{ ai.details }}</span>
                     </figcaption>
-                  </figure>
+                </figure>
                 </div>
                 {% endfor %}
-  
+
                 <!-- Projeto de Backend -->
                 {% for backend in backend_projects %}
                 <div class="isotope-item" data-type="backend">
                   <figure class="snip1321">
-                    <img src="{{ backend.img_path }}" alt="{{ backend.name }}" />
+                    <img src="{% static backend.img_path %}" alt="{{ backend.name }}" />
                     <figcaption>
-                      <a href="{{ backend.img_path }}" data-lightbox="image-1" data-title="{{ backend.name }}"><i class="fa fa-search"></i></a>
+                      <a href="{%static backend.img_path %}" data-lightbox="image-1" data-title="{{ backend.name }}"><i class="fa fa-search"></i></a>
                       <h4>{{ backend.name }}</h4>
                       <span>{{ backend.details }}</span>
                     </figcaption>
@@ -161,9 +161,9 @@
                 {% for hardware in hardware_projects %}
                 <div class="isotope-item" data-type="hardware">
                   <figure class="snip1321">
-                    <img src="{{ hardware.img_path }}" alt="{{ hardware.name }}" />
+                    <img src="{% static hardware.img_path %}" alt="{{ hardware.name }}" />
                     <figcaption>
-                      <a href="{{ hardware.img_path }}" data-lightbox="image-1" data-title="{{ hardware.name }}"><i class="fa fa-search"></i></a>
+                      <a href="{ % static hardware.img_path %}" data-lightbox="image-1" data-title="{{ hardware.name }}"><i class="fa fa-search"></i></a>
                       <h4>{{ hardware.name }}</h4>
                       <span>{{ hardware.details }}</span>
                     </figcaption>
@@ -175,9 +175,9 @@
                 {% for outros in outros_projects %}
                 <div class="isotope-item" data-type="outros">
                   <figure class="snip1321">
-                    <img src="{{ outros.img_path }}" alt="{{ outros.name }}" />
+                    <img src="{% static outros.img_path %}" alt="{{ outros.name }}" />
                     <figcaption>
-                      <a href="{{ outros.img_path }}" data-lightbox="image-1" data-title="{{ outros.name }}"><i class="fa fa-search"></i></a>
+                      <a href="{% static outros.img_path %}" data-lightbox="image-1" data-title="{{ outros.name }}"><i class="fa fa-search"></i></a>
                       <h4>{{ outros.name }}</h4>
                       <span>{{ outros.details }}</span>
                     </figcaption>
@@ -194,18 +194,17 @@
       <section id="contate-me" class="section contate-me" data-section="#section4">
         <div class="container">
           <div class="section-heading">
-            <h2>Contate-me</h2>
+            <h2>Contact Me</h2>
             <p>
-              Para entrar em contato comigo, por favor, envie um e-mail para <a href="mailto:gabrielgavalera@gmail.com">gabrielgavalera@gmail.com</a> Optei por desativar o formulário de 
-              contato nesta página devido à necessidade de expor o código publicamente para que funcione na web sem custos.
-              
+                To get in touch with me, please send an email to <a href="mailto:gabrielgavalera@gmail.com">gabrielgavalera@gmail.com</a>. I have chosen to disable the contact form on this page due to the need to publicly expose the code for it to function on the web at no cost
+            </p>
             <div class="line-dec"></div>
             <span></span>
           </div>
           <div class="row">
             <div class="right-content">
               <div class="container">
-                <form id="contact" action="{% url 'index' %}" method="post">
+                <form id="contact" action="{% url 'index_en' %}" method="post">
                   {% csrf_token %}
                   <div class="row">
                     <div class="col-md-6">
@@ -270,27 +269,26 @@
           </div>
         </div>
       </section>
-      <!-- Selector de Idioma -->
-      <div style="position: fixed; top: 20px; right: 20px; background-color: #8c363e; padding: 5px 10px; border-radius: 5px;">
+    <!-- Language Selector -->
+    <div style="position: fixed; top: 20px; right: 20px; background-color: #8c363e; padding: 5px 10px; border-radius: 5px;">
         <span style="color: white;">Language:</span>
         <select onchange="changeLanguage(this.value)" style="margin-left: 5px;">
-            <option value="pt" style="color: black;">Português</option>
             <option value="en" style="color: black;">English</option>
-            
+            <option value="pt" style="color: black;">Português</option>
         </select>
     </div>
     
 
     <!-- Scripts JavaScript -->
     <script>
-      // Função para mudar de idioma
-      function changeLanguage(language) {
-        if (language === 'pt') {
-          window.location.href = '/index/';
-        } else if (language === 'en') {
-          window.location.href = '/index_en/';
+        // Função para mudar de idioma
+        function changeLanguage(language) {
+        if (language === 'en') {
+            window.location.href = '/index_en/';
+        } else if (language === 'pt') {
+            window.location.href = '/';
         }
-      }
+        }
     </script>
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->

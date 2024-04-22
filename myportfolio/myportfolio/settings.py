@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-m9m^fbkng$9h(fck*foovix20i2055-%-lbibxe%2rp2w*ltq(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['node180a.containers.back4app.com', 'portfolioweb1-kuzrbxnn.b4a.run']
+ALLOWED_HOSTS = ['node180a.containers.back4app.com', 'portfolioweb1-kuzrbxnn.b4a.run', '127.0.0.1', '8000']
 
 
 # Application definition
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'myportfolio.urls'

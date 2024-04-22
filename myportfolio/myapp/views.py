@@ -117,3 +117,97 @@ def contact(request):
         )        
     return render(request, 'index.html')      
     
+def index_en(request):
+        
+    side1 = SideBar()
+    side1.name = 'About me'
+    side1.anchor = 'sobre-mim'
+
+    side2 = SideBar()
+    side2.name = 'Skills'
+    side2.anchor = 'habilidades'
+
+    side3 = SideBar()
+    side3.name = 'My Projects'
+    side3.anchor = 'meus-projetos'
+
+    side4 = SideBar()
+    side4.name = 'Contact me'
+    side4.anchor = 'contate-me'
+    sides = [side1, side2, side3, side4]
+        
+    feature1 = Features()
+    feature1.name = 'Python'
+    feature1.details = 'With six years of experience in Python, I have delved deep into this language, initially attracted by its applications in artificial intelligence. Over time, I have explored its capabilities in various areas, gaining proficiency in several key libraries such as NumPy, pandas, Matplotlib, Math, among others. Additionally, I have extensively used Python for backend development, employing frameworks like Django and Flask.'
+    feature1.img_path = '/assets/images/python_logo.webp'
+
+    feature2 = Features()
+    feature2.name = 'C and C++'
+    feature2.details = 'In the course cycle of Computer Engineering at UFSC, all programming part is done in C and C++. The use of C was mainly focused on hardware, such as microprocessors and microcontrollers, as well as embedded operating systems. On the other hand, in C++, I explored its entire object-oriented cycle, data structure, and even the architecture of operating systems. Therefore, I have solid practice and knowledge in both languages.'
+    feature2.img_path = '/assets/images/clogo.png'
+
+    feature3 = Features()
+    feature3.name = 'Artificial Intelligence'
+    feature3.details  = 'In the past six years, I have delved deeply into the world of artificial intelligence, focusing on computer vision, natural language processing (NLP), and machine learning. I have explored a wide range of projects, from convolutional neural networks to time series analysis, always aiming to apply AI tangibly in real-world situations. I have experience in various essential libraries such as TensorFlow, PyTorch, OpenCV, Transformers, Keras, Scikit-learn, among others.'
+    feature3.img_path= '/assets/images/ai_logo.png'
+
+    feature4 = Features()
+    feature4.name = 'Full Stack'
+    feature4.details = 'In the web development area, I have more experience in backend, especially using Django, Flask. However, I also have a brief knowledge of JavaScript and TypeScript applied in Node Js, while in the frontend area, I have a brief knowledge of html, css, and js and have used a bit of React Js.'
+    feature4.img_path = '/assets/images/second-main-icon.png'
+
+    feature5 = Features()
+    feature5.name = 'Other Knowledge'
+    feature5.details = 'I would like to mention some other topics I have knowledge of: Git, Docker, AmazonAWS, MySQL, MatLab, R, Proteus, Arduino.'
+    feature5.img_path = '/assets/images/first-white-icon.png'
+    features = [feature1, feature2, feature3, feature4, feature5]
+
+    ai1 = MyProjects()
+    ai1.name = 'Body Measurements Extraction'
+    ai1.details = 'With just a photo and providing your height, you will receive your body measurements.'
+    ai1.img_path = '/assets/images/BodyMeasure.png'
+
+    ai2 = MyProjects()
+    ai2.name = 'Ideal Clothing Size Based on Body Measurements'
+    ai2.details = 'With the body measurements extraction algorithm, an application for clothing was made. This application uses the results of body measurements as input for a fuzzy logic, which determines the ideal clothing size pattern for each individual based on their unique measurements. Thus, the application returns the most suitable clothing size according to the provided body measurements. (Example photo, T-shirt)'
+    ai2.img_path = '/assets/images/cloth_measure.png'
+
+    ai3 = MyProjects()
+    ai3.name = 'Facial Recognition'
+    ai3.details = 'In this project, I made a facial recognition to recognize people with and without masks, I used a dataset available on the internet to train the model, as a result it would show the top 5 most likely classes to be the person in the photo, if the score was very good it showed that the person was recognized (In this experiment I put 3 photos of mine without a mask and put it to recognize one with a mask, to test the model)'
+    ai3.img_path = '/assets/images/FacialRecognition.png'
+
+    ai4 = MyProjects()
+    ai4.name = 'Stock Price Prediction'
+    ai4.details = 'In this project, I developed a stock price prediction model for BBAS3 stock. I used historical stock price data over the days to build the model. It was trained with data covering the period from January 2018 to December 2022 and subsequently tested with data from the first month of 2022.'
+    ai4.img_path = '/assets/images/Stock_Price.png'
+    ai_projects = [ai1, ai2, ai3, ai4]
+
+    bc1 = MyProjects()
+    bc1.name = 'MeasureMate'
+    bc1.details = 'I applied my body measurements extraction code on a web server, using python for the backend, django as a framework, and as a frontend html, css, and js.'
+    bc1.img_path = '/assets/images/MeasureMate.png'
+
+    bc2 = MyProjects()
+    bc2.name = 'Inventory Management System'
+    backend_projects = [bc1]
+
+    hd1 = MyProjects()
+    hd1.name = 'Smart Fireplace'
+    hd1.details = 'This project was developed using the C language, Proteus software, and a PIC 16F877A. It is a smart fireplace, designed to offer control over functions such as turn on/off, temperature adjustment, and flame intensity. An additional feature is the ability to release scents of essences chosen by the customer, providing a personalized sensory experience.'
+    hd1.img_path = '/assets/images/Lareira_inteligente.png'
+
+    hd2 = MyProjects()
+    hd2.name = 'Vertical Agriculture Automation'
+    hd2.details = 'Using FPGA and VHDL, I developed a control system for an automated vertical farm. The system has Temperature control (temperature sensors), Humidity Monitoring (humidity sensors), Automatic irrigation (time chosen according to each type of planting), and Lighting control (automatically adjusted to provide the ideal photoperiod for plant growth)'
+    hd2.img_path = '/assets/images/Agricultura_vertical.png'
+    hardware_projects = [hd1, hd2]
+
+    ot1 = MyProjects()
+    ot1.name =  'Ideal Planting Conditions System'
+    ot1.details = 'I used fuzzy logic to optimize planting development, aiming to achieve the maximum growth and production potential.'
+    ot1.img_path = '/assets/images/Fuzzy_estufa.png'
+    outros_projects = [ot1]
+
+    return render(request, 'index_en.html', {'features': features, 'sides': sides, 'ai_projects': ai_projects,
+                                            'backend_projects': backend_projects, 'hardware_projects': hardware_projects, 'outros_projects': outros_projects})
