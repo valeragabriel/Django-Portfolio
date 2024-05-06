@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-m9m^fbkng$9h(fck*foovix20i2055-%-lbibxe%2rp2w*ltq(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['node180a.containers.back4app.com', 'portfolioweb1-kuzrbxnn.b4a.run', '127.0.0.1', '8000']
+ALLOWED_HOSTS = ['node180a.containers.back4app.com', 'portfolioweb1-kuzrbxnn.b4a.run', 'django-portfolio-4gt5ypb5w.vercel.app', '127.0.0.1', '8000']
 
 
 # Application definition
